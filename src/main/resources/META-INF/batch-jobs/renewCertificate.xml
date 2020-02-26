@@ -1,0 +1,15 @@
+<job id="renewCertificate" xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="1.0">
+
+    <flow id="mainprocess">
+        <step id="step">
+            <batchlet ref="certificateRenewerBatchlet">
+                <properties>
+                    <property name="certificateKeystore" value="#{jobParameters['certificateKeystore']}"/>
+                    <property name="superadminPassword" value="#{jobParameters['superadminPassword']}"/>
+                    <property name="keyManager" value="#{jobParameters['keyManager']}"/>
+                </properties>
+            </batchlet>
+        </step>
+    </flow>
+
+</job>
