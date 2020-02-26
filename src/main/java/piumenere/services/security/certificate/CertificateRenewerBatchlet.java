@@ -1,6 +1,7 @@
 package piumenere.services.security.certificate;
 
 import java.io.IOException;
+import javax.annotation.Resource;
 import javax.batch.api.AbstractBatchlet;
 import javax.batch.api.BatchProperty;
 import javax.batch.runtime.BatchStatus;
@@ -28,8 +29,7 @@ public class CertificateRenewerBatchlet extends AbstractBatchlet {
     @BatchProperty
     protected String certificateKeystore;
 
-    @Inject
-    @BatchProperty
+    @Resource(lookup = "java:global/superadminPassword")
     protected String superadminPassword;
 
     @Inject
