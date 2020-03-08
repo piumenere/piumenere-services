@@ -3,6 +3,6 @@ package piumenere.services.entities;
 import javax.persistence.Entity;
 
 @Entity
-public class User extends Editable {
+public class Person extends Editable {
     
 }

@@ -10,8 +10,11 @@
             <!-- SPECIFICA DI HIBERNATE, PER JASPIC -->
             <property name="hibernate.enable_lazy_load_no_trans" value="true"/>
             
+            <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect" />
             <property name="hibernate.cache.use_second_level_cache" value="true"/>
             <property name="hibernate.cache.use_query_cache" value="true"/>
+            
+            
       
         </properties>
     </persistence-unit>

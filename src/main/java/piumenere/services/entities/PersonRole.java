@@ -8,14 +8,14 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class UserRole extends Creable {
+public class PersonRole extends Creable {
 
     @Column
     @Enumerated(EnumType.STRING)
     private RoleType type;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private User user;
+    private Person person;
 
     public RoleType getType() {
         return type;
@@ -25,12 +25,12 @@ public class UserRole extends Creable {
         this.type = type;
     }
 
-    public User getUser() {
-        return user;
+    public Person getPerson() {
+        return person;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setPerson(Person person) {
+        this.person = person;
     }
     
 }
