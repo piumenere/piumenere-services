@@ -1,9 +1,6 @@
 package piumenere.services.security;
 
 import com.restfb.DefaultFacebookClient;
-import com.restfb.FacebookClient;
-import com.restfb.FacebookClient.AccessToken;
-import com.restfb.Parameter;
 import com.restfb.Version;
 import com.restfb.exception.FacebookOAuthException;
 import com.restfb.types.User;
@@ -11,14 +8,10 @@ import javax.annotation.Resource;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.security.enterprise.identitystore.CredentialValidationResult;
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 
 @ApplicationScoped
 public class FacebookIdentityStore implements TokenIdentityStore {
-
-    @Resource(lookup = "java:global/facebookAppId")
-    protected String facebookAppId;
     
     @Resource(lookup = "java:global/facebookAppSecret")
     protected String facebookAppSecret;
