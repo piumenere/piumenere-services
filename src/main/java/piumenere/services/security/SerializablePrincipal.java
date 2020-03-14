@@ -8,4 +8,8 @@ public abstract class SerializablePrincipal extends CallerPrincipal {
         super("");
     }
     
+    public SerializablePrincipal(String name) {
+        super(name);
+    }
+    
 }
