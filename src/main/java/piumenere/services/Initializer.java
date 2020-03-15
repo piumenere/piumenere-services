@@ -32,7 +32,6 @@ public class Initializer {
         Arrays.asList(superadmins.split(",")).forEach(superadmin -> {
             Person personToFind = new Person();
             personToFind.setCredential(superadmin);
-            FindResult<Person> find = personStore.find(Arrays.asList(CriteriaUtils.getInstance(personToFind)), null, 1, 0);
             Person person = StoreUtils.createIfNotFound(personToFind, personToFind, personStore);
             Arrays.asList(RoleType.values()).forEach(roleType -> {
             PersonRole personRoleToFind = new PersonRole();
