@@ -1,0 +1,14 @@
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_2.xsd"
+         version="3.2">
+    <assembly-descriptor>
+        <method-permission>
+            <role-name>SUPERADMINISTRATOR</role-name>
+            <method>
+                <ejb-name>TimerSchedulerBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+        </method-permission>
+    </assembly-descriptor>
+</ejb-jar>

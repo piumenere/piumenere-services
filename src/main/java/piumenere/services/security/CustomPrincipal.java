@@ -6,15 +6,15 @@ import piumenere.services.entities.Person;
 
 public class CustomPrincipal extends SerializablePrincipal implements Principal, Serializable {
     
-    private final Person user;
+    private final Person person;
     
     public CustomPrincipal(String name, Person user) {
         super(name);
-        this.user = user;
+        this.person = user;
     }
 
-    public Person getUser() {
-        return user;
+    public Person getPerson() {
+        return person;
     }
     
 }

@@ -17,7 +17,6 @@ import org.apache.commons.collections4.SetUtils;
 import org.slf4j.Logger;
 import piumenere.services.entities.Person;
 import piumenere.services.entities.PersonRole;
-import piumenere.services.find.FindResult;
 import piumenere.services.store.IdentifiableStore;
 import piumenere.services.utils.CriteriaUtils;
 

@@ -10,8 +10,8 @@
     </session-config>
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>Allresources</web-resource-name>
-            <url-pattern>/*</url-pattern>
+            <web-resource-name>Resources</web-resource-name>
+            <url-pattern>/resources/*</url-pattern>
         </web-resource-collection>
         <user-data-constraint>
             <transport-guarantee>CONFIDENTIAL</transport-guarantee>
@@ -20,7 +20,25 @@
             <role-name>*</role-name>
         </auth-constraint>
     </security-constraint>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Jberet</web-resource-name>
+            <url-pattern>/resources/jobs/*</url-pattern>
+            <url-pattern>/resources/schedules/*</url-pattern>
+            <url-pattern>/resources/jobexecutions/*</url-pattern>
+            <url-pattern>/resources/jobinstances/*</url-pattern>
+        </web-resource-collection>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+        <auth-constraint>
+            <role-name>SUPERADMINISTRATOR</role-name>
+        </auth-constraint>
+    </security-constraint>
     <security-role>
         <role-name>*</role-name>
+    </security-role>
+    <security-role>
+        <role-name>SUPERADMINISTRATOR</role-name>
     </security-role>
 </web-app>

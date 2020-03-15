@@ -8,7 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class PersonRole extends Deletable {
+public class PersonRole extends Validable {
 
     @Column
     @Enumerated(EnumType.STRING)
