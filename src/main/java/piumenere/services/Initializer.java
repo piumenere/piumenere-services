@@ -9,9 +9,7 @@ import javax.inject.Inject;
 import piumenere.services.entities.Person;
 import piumenere.services.entities.PersonRole;
 import piumenere.services.entities.RoleType;
-import piumenere.services.find.FindResult;
 import piumenere.services.store.CreableStore;
-import piumenere.services.utils.CriteriaUtils;
 import piumenere.services.utils.StoreUtils;
 
 @Singleton
