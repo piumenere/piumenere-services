@@ -1,4 +1,4 @@
-package piumenere.services.service;
+package piumenere.services.resources;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.GET;
@@ -10,7 +10,7 @@ import piumenere.services.entities.Person;
 
 @Path("/person")
 @ApplicationScoped
-public class PersonService extends AbstractEditableService<Person, EditableController<Person>> {
+public class PersonResource extends AbstractEditableResource<Person, EditableController<Person>> {
     
     @GET
     @Produces(MediaType.APPLICATION_JSON)

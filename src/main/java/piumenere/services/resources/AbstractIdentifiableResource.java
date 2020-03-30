@@ -1,4 +1,4 @@
-package piumenere.services.service;
+package piumenere.services.resources;
 
 import java.util.Collection;
 import java.util.Optional;
@@ -19,38 +19,43 @@ import piumenere.services.find.FindResult;
 import piumenere.services.generics.AbstractDoubleGenericClass;
 import piumenere.services.security.CustomPrincipal;
 
-public abstract class AbstractIdentifiableService<T extends Identifiable, C extends IdentifiableController<T>> extends AbstractDoubleGenericClass<T, C> implements IdentifiableService<T> {
+public abstract class AbstractIdentifiableResource<T extends Identifiable, C extends IdentifiableController<T>> extends AbstractDoubleGenericClass<T, C> implements IdentifiableResource<T> {
 
     @Inject
     private GenericBeanProvider genericBeanProvider;
-    
+
     @Inject
     private Logger logger;
-    
+
     @Inject
     protected SecurityContext securityContext;
-    
-    protected Optional<CustomPrincipal> getCustomPrincipal(){
-        if (securityContext.getCallerPrincipal() instanceof CustomPrincipal){
+
+    protected Optional<CustomPrincipal> getCustomPrincipal() {
+        if (securityContext.getCallerPrincipal() instanceof CustomPrincipal) {
             return Optional.of(CustomPrincipal.class.cast(securityContext.getCallerPrincipal()));
         }
         return Optional.empty();
     }
-        
-    protected C getController(){
+
+    protected C getController() {
         Optional<C> bean = genericBeanProvider.getBean(getSecondGenericsType());
-        if(!bean.isPresent()){
+        if (!bean.isPresent()) {
             logger.error("CONTROLLER NOT FOUND " + getSecondGenericsType());
         }
         return bean.get();
-    };
-    
+    }
+
     @Override
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/find")
-    public FindResult<T> find(Collection<FindCriteria<T>> criterias, Collection<FindOrder<T>> orders, Integer quantity, Integer offset) {
+    public FindResult<T> find(
+            Collection<FindCriteria<T>> criterias,
+            Collection<FindOrder<T>> orders,
+            Integer quantity,
+            Integer offset
+    ) {
         return getController().find(criterias, orders, quantity, offset);
     }
 

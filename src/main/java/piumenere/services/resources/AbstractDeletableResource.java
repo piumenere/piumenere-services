@@ -1,11 +1,11 @@
-package piumenere.services.service;
+package piumenere.services.resources;
 
 import java.util.Collection;
 import javax.ws.rs.DELETE;
 import piumenere.services.controller.DeletableController;
 import piumenere.services.entities.Deletable;
 
-public abstract class AbstractDeletableService<T extends Deletable, C extends DeletableController<T>> extends AbstractEditableService<T, C> implements DeletableService<T> {
+public abstract class AbstractDeletableResource<T extends Deletable, C extends DeletableController<T>> extends AbstractEditableResource<T, C> implements DeletableResource<T> {
 
     @Override
     @DELETE

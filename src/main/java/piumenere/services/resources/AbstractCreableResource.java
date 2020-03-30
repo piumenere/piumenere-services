@@ -1,4 +1,4 @@
-package piumenere.services.service;
+package piumenere.services.resources;
 
 import java.util.Collection;
 import javax.ws.rs.Consumes;
@@ -8,7 +8,7 @@ import javax.ws.rs.core.MediaType;
 import piumenere.services.entities.Creable;
 import piumenere.services.controller.CreableController;
 
-public abstract class AbstractCreableService<T extends Creable, C extends CreableController<T>> extends AbstractIdentifiableService<T, C> implements CreableService<T> {
+public abstract class AbstractCreableResource<T extends Creable, C extends CreableController<T>> extends AbstractIdentifiableResource<T, C> implements CreableResource<T> {
   
     @Override
     @POST

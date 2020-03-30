@@ -12,10 +12,11 @@ import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 import javax.persistence.Version;
+import piumenere.services.JsonbPolymorphic;
 
 @MappedSuperclass
 @Inheritance(strategy=InheritanceType.JOINED)
-public abstract class Identifiable implements Serializable {
+public abstract class Identifiable implements JsonbPolymorphic, Serializable {
     
     @Id
     private String id;

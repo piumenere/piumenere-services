@@ -1,4 +1,4 @@
-package piumenere.services.service;
+package piumenere.services.resources;
 
 import java.util.Collection;
 import javax.ws.rs.Consumes;
@@ -8,7 +8,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-public abstract class AbstractEditableService<T extends Editable, C extends EditableController<T>> extends AbstractCreableService<T, C> implements EditableService<T> {
+public abstract class AbstractEditableResource<T extends Editable, C extends EditableController<T>> extends AbstractCreableResource<T, C> implements EditableResource<T> {
     
     @Override
     @PUT

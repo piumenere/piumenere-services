@@ -1,9 +1,9 @@
-package piumenere.services.service;
+package piumenere.services.resources;
 
 import java.util.Collection;
 import piumenere.services.entities.Deletable;
 
-public interface DeletableService<T extends Deletable> extends EditableService<T> {
+public interface DeletableResource<T extends Deletable> extends EditableResource<T> {
     
     public void delete(Collection<T> resources);
     
